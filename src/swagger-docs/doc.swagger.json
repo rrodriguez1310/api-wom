@@ -340,7 +340,7 @@
                         "description": "Datos a actualizar de un usuario.",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/user"
+                            "$ref": "#/definitions/userPer"
                         }
             
                     }
@@ -951,6 +951,40 @@
                     "type": "number"
                 },
                 "cid": {
+                    "type": "string"
+                },
+                "telefono": {
+                    "type": "number"
+                },
+                "equipo": {
+                    "type": "string"
+                },
+                "emailRecuperacion": {
+                    "type": "string"
+                },
+                "pais": {
+                    "type": "string"
+                },
+                "rut": {
+                    "type": "string"
+                }
+            }
+        },  "userPer": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellidos": {
+                    "type": "string"
+                },
+                "fechaNacimiento": {
+                    "type": "string"
+                },
+                "genero": {
                     "type": "string"
                 },
                 "telefono": {
