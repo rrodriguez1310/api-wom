@@ -953,9 +953,6 @@
                 "cid": {
                     "type": "string"
                 },
-                "fechaAlta": {
-                    "type": "string"
-                },
                 "telefono": {
                     "type": "number"
                 },
