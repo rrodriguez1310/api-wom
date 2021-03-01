@@ -1,6 +1,6 @@
-export const PORT = 3001;
+export const PORT = 5000;
 export const WELCOME_MESSAGE = "Welcome REST API CDF ^^";
-export const MONGO_URL = "mongodb://localhost:27017/cdfMaster";
+export const MONGO_URL = "mongodb+srv://cdfdev_app:BCRbNfGUtpxTvguq@cdfmaster-dev.pgdkn.mongodb.net/cdfMaster_dev?retryWrites=true&w=majority";
 export const CER_PRIVATE = '-----BEGIN RSA PRIVATE KEY-----\n' +
     'MIIEowIBAAKCAQEApjun03hl9/seoa7pBBtj5LRWTMpIRnYhm/wCyD6xjNzXAeH1\n' +
     'cpMzSaKGi1JgCGyLG759E2YAENrvLvhuDzeO4OX8igP6n7G+FA5ck9GlVrBIHwWe\n' +
