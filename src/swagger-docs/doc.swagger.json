@@ -229,7 +229,7 @@
                         "description": "Parametros de ingreso",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/user"
+                            "$ref": "#/definitions/userWom"
                         }
                     }
                    
@@ -380,7 +380,7 @@
                         "description": "Datos a actualizar de un usuario con la data de WOM.",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/user"
+                            "$ref": "#/definitions/userWom"
                         }
             
                     }
@@ -499,10 +499,10 @@
                 
                 "responses": {
                     "400": {
-                        "description": "message: Error en la busqueda de todos los producto."
+                        "description": "message: Error en la busqueda de todos los productos."
                     },
                     "200": {
-                        "description":  " message: Lista los Productos registrador. "
+                        "description":  " message: Lista los Productos registrados. "
                     }
                 }
             }
@@ -1000,6 +1000,26 @@
                     "type": "string"
                 },
                 "rut": {
+                    "type": "string"
+                }
+            }
+        },  "userWom": {
+            "type": "object",
+            "properties": {
+           
+                "pasarela": {
+                    "type": "string"
+                },
+                "estadoToken": {
+                    "type": "string"
+                },
+                "material": {
+                    "type": "string"
+                },
+                "dispositivos": {
+                    "type": "number"
+                },
+                "cid": {
                     "type": "string"
                 }
             }
