@@ -1,0 +1,1021 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "CDF API",
+        "description": "Documentación",
+        "version": "2.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "",
+    "basePath": "/api/v2",
+    "securityDefinitions": {        
+        "bearerAuth": {
+       
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+          
+        }
+      },
+    "paths": {
+        "/auth/wom": {
+            "get": {
+                "tags": [
+                    "authwom"
+                ],
+                "summary": "Identifica al cliente wom",
+                "description": "Retorna JWT de acceso integrado con proveedor WOM",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "description": "RandomNumber",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/authwom"
+                        },
+                        "allowReserved": true,
+                        "type":"string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "code",
+                        "description": "TBgmID8SBn",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/authwom"
+                        },
+                        "allowReserved": true,
+                        "type":"string"
+                    }
+
+                ],
+                "responses": {
+                    "400": {
+                        "description": "message: jwt malformed"
+                    },
+                    "200": {
+                        "description": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YjM1ZGE4NS1iMGZmLTQzYmMtOWMxMi00MjA1NzRmZDBkMmIiLCJ1c2VySWQiOiI1ZmZlZThhOTY3ZjA0NWFiZGFkYzhhYmEiLCJub21icmUiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImFwZWxsaWRvUGF0ZXJubyI6Imdyb3VwYnljYXFAZ21haWwuY29tIiwiZmVjaGFfbmFjaW1pZW50byI6Inh4eHgiLCJmZWNoYU5hY2ltaWVudG8iOiJ4eHh4eCIsImdlbmVybyI6Inh4eHh4IiwiZW1haWwiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImNvZGUiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImVzdGFkbyI6ImNvbXBsZXRhZG8iLCJwYXNhcmVsYSI6InBhc2FyZWxhIiwibWF0ZXJpYWwiOiJtYWV0ZXJpYWwiLCJkaXNwb3NpdGl2b3MiOiJkaXNwb3NpdGl2b3MiLCJpc3MiOiJhcGkuY2RmLmNsIiwiYXBwSWQiOiJhcHBJZCIsInJlbWVtYmVyIjp0cnVlLCJpYXQiOjE2MTI4NjYxNDd9.QfSoZgWxamrl5aMISPDzOIbM-9k7ioxnuJDur80jLrqxk3k1JL3ks5ZWqMaIT2w-iR4un3PUGaaJPY4-zAA9-P8P6Ad-9cb_CopmBfzqyrQDHYnIi-3rnYiuytpECGoNqihGwXihAsa0EsrpGH7BPA_xZ9zrSu90ZAY0n_ihZUe0k6kiIHK_B5HeowEbffuLUDj8A0Eeh5iRP5ELl_CNFNQT3tW0-1tL384WZgm4ajMjosWrM_EhaVrwuky4xZ1pOHii7V0dxZzgEbxTTTEexULcXxs48I0NVuDiX9os2NQOvng5XrmcXu23VbXrNYX1Dv8lPwpc-0_1TDlJlmth4Q"
+                    }
+                }
+            }
+        },
+        
+        "/updata/insert": {
+            "post": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "Data ALTA"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Parametros de ingreso",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updata"
+                        }
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el Ingreso del usuario en Alta"
+                    },
+                    "200": {
+                        "description": "Retorna los datos ingresados."
+                    }
+                }
+            }
+        },
+        
+        "/updata/find": {
+            "get": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "Data ALTA"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": false,
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error al listar la data de  BAJA"
+                    },
+                    "200": {
+                        "description": "Retorna los datos listados."
+                    }
+                }
+            }
+        },
+        
+        "/downdata/insert": {
+            "post": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "Data BAJA"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Parametros de ingreso",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/downdata"
+                        }
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el Ingreso del usuario en BAJA"
+                    },
+                    "200": {
+                        "description": "Retorna los datos ingresados."
+                    }
+                }
+            }
+        },
+
+        "/downdata/find": {
+            "get": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "Data BAJA"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": false,
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error al listar la data de  BAJA"
+                    },
+                    "200": {
+                        "description": "Retorna los datos listados."
+                    }
+                }
+            }
+        },
+        
+        "/user/insert": {
+            "post": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Parametros de ingreso",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user"
+                        }
+                    }
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el Ingreso del usuario."
+                    },
+                    "200": {
+                        "description": "Retorna los datos ingresado."
+                    }
+                }
+            }
+        },
+        
+        "/user/find": {
+            "get": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": false,
+                "parameters": [
+                 
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el listar del usuario."
+                    },
+                    "200": {
+                        "description": "Retorna los datos listados."
+                    }
+                }
+            }
+        },
+        
+        "/user/find/{id}": {
+            "get": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Listar un usuario",
+                        "required": true
+                    }
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el listar un usuario."
+                    },
+                    "200": {
+                        "description": "Retorna los datos un usuario."
+                    }
+                }
+            }
+        },
+        
+        "/user/update/{id}": {
+            "put": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "modifica datos personales de un usuario.",
+                        "required": true
+                    },  {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos a actualizar de un usuario.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user"
+                        }
+            
+                    }
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el listar un usuario."
+                    },
+                    "200": {
+                        "description": "Retorna los datos un usuario."
+                    }
+                }
+            }
+        },
+        
+        "/user/update/": {
+            "put": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos a actualizar de un usuario con la data de WOM.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user"
+                        }
+            
+                    }
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error en el listar un usuario."
+                    },
+                    "200": {
+                        "description": "Retorna los datos un usuario."
+                    }
+                }
+            }
+        },
+        
+        "/user/delete/{id}": {
+            "put": {
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                    "tags": [
+                        "User"
+                    ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Desactiva un usuario.",
+                        "required": true
+                    }
+                   
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Error al eliminar un usuario."
+                    },
+                    "200": {
+                        "description": "Retorna mensaje de datos eliminados."
+                    }
+                }
+            }
+        },
+
+        "/product/insert": {
+        
+            "post": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                "tags": [
+                    "Product"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Parametros de ingreso",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product"
+                        }
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en el Ingreso del producto."
+                    },
+                    "200": {
+                        "description":  " message: Retorna los datos del producto registrado. "
+                    }
+                }
+            }
+        },
+    
+        "/product/find": {
+        
+            "get": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Product"
+                ],
+           
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": false,
+                "parameters": [
+              
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en la busqueda de todos los producto."
+                    },
+                    "200": {
+                        "description":  " message: Lista los Productos registrador. "
+                    }
+                }
+            }
+        },
+        
+        "/product/find/{id}": {
+        
+            "get": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Product"
+                ],
+            
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id  de un Prodcuto",
+                        "required": false
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en la busqueda del producto."
+                    },
+                    "200": {
+                        "description":  " message:Datos del producto. "
+                    }
+                }
+            }
+        },
+        "/product/update/{id}": {
+        
+            "put": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                "tags": [
+                    "Product"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "actualizacion de un Producto",
+                        "required": true
+            
+                    },  {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos a actualizar de un producto.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/product"
+                        }
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en la edición del proveedor."
+                    },
+                    "200": {
+                        "description":  " message: Registro editado correctamente. "
+                    }
+                }
+            }
+        },
+        "/product/delete/{id}": {
+        
+            "put": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Product"
+                ],
+                "description": "Elimina  un proveedor.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "eliminar un producto",
+                        "required": true
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en borrar del producto."
+                    },
+                    "200": {
+                        "description":  " message: Registro borrado  correctamente. "
+                    }
+                }
+            }
+        }
+        ,
+        "/provider/insert": {
+        
+            "post": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                "tags": [
+                    "Providers"
+                ],
+                "description": "Registra un proveedor..",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Registro de un proveedor",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/provider"
+                        }
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en el Ingreso del proveedor."
+                    },
+                    "200": {
+                        "description":  " message: Retorna los datos del proveedor registrado. "
+                    }
+                }
+            }
+        },
+        
+        "/provider/find/": {
+        
+            "get": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Providers"
+                ],
+                "description": "Retorna un proveedor especifico.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+              
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en listar los proveedores."
+                    },
+                    "200": {
+                        "description":  " message: lista los proveedores. "
+                    }
+                }
+            }
+        },
+
+        "/provider/find/{id}": {
+        
+            "get": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Providers"
+                ],
+                "description": "Retorna un proveedor especifico.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Busqueda de un Proveedor",
+                        "required": false
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en la busqueda del proveedor."
+                    },
+                    "200": {
+                        "description":  " message: Busqueda de un proveedor. "
+                    }
+                }
+            }
+        },
+        "/provider/update/{id}": {
+        
+            "put": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+                "tags": [
+                    "Providers"
+                ],
+                "description": "Actualiza a  un proveedor.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "actualizacion de un proveedor",
+                        "required": true
+            
+                    },  {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos a actualizar de un proveedor.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/provider"
+                        }
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en la edición del proveedor."
+                    },
+                    "200": {
+                        "description":  " message: Registro editado correctamente. "
+                    }
+                }
+            }
+        },
+        "/provider/delete/{id}": {
+        
+            "put": {    
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }],
+
+                "tags": [
+                    "Providers"
+                ],
+                "description": "Elimina  un proveedor.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "required": true,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "eliminar un proveedor",
+                        "required": true
+            
+                    }
+                ],
+                
+                "responses": {
+                    "400": {
+                        "description": "message: Error en borrar del proveedor."
+                    },
+                    "200": {
+                        "description":  " message: Registro borrado  correctamente. "
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "auth": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "appId": {
+                    "type": "string"
+                },
+                "remember": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "authwom": {
+            "type": "object",
+            "properties": {
+                "state": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "number"
+                }
+            }
+        },
+
+        "authautomatic": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "updata": {
+            "type": "object",
+            "properties": {
+                "pasarela": {
+                    "type": "string"
+                },
+                "estadoToken": {
+                    "type": "boolean"
+                },
+                "material": {
+                    "type": "string"
+                },
+                "dispositivos": {
+                    "type": "number"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "fechaAlta": {
+                    "type": "string"
+                }
+            }
+        },
+        "downdata": {
+            "type": "object",
+            "properties": {
+                "pasarela": {
+                    "type": "string"
+                },
+                "estadoToken": {
+                    "type": "boolean"
+                },
+                "material": {
+                    "type": "string"
+                },
+                "dispositivos": {
+                    "type": "number"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "fechaBaja": {
+                    "type": "string"
+                }
+            }
+        },
+        "user": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellidos": {
+                    "type": "string"
+                },
+                "fechaNacimiento": {
+                    "type": "string"
+                },
+                "genero": {
+                    "type": "string"
+                },
+                "tipo": {
+                    "type": "string"
+                },
+                "estado": {
+                    "type": "boolean"
+                },
+                "pasarela": {
+                    "type": "boolean"
+                },
+                "estadoToken": {
+                    "type": "boolean"
+                },
+                "material": {
+                    "type": "string"
+                },
+                "dispositivos": {
+                    "type": "number"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "fechaAlta": {
+                    "type": "string"
+                },
+                "telefono": {
+                    "type": "number"
+                },
+                "equipo": {
+                    "type": "string"
+                },
+                "emailRecuperacion": {
+                    "type": "string"
+                },
+                "pais": {
+                    "type": "string"
+                },
+                "rut": {
+                    "type": "string"
+                }
+            }
+        }
+        ,
+        "provider": {
+            "type": "object",
+            "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "descripcion": {
+                    "type": "string"
+                },
+                "imagen": {
+                    "type": "string"
+                }
+            }
+        }
+        ,
+        "product": {
+            "type": "object",
+            "properties": {
+                "producto": {
+                    "type": "string"
+                },
+                "material": {
+                    "type": "string"
+                },
+                "descripcion": {
+                    "type": "string"
+                },
+                "tipo": {
+                    "type": "string"
+                },
+                "proveedor": {
+                    "type": "string"
+                },
+                "dispositivos": {
+                    "type": "number"
+                },
+                "code": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
