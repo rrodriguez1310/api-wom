@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "CDF API",
+        "title": "TNT Sports API",
         "description": "Documentación",
         "version": "2.0"
     },
@@ -61,7 +61,7 @@
                 ],
                 "responses": {
                     "400": {
-                        "description": "message: jwt malformed"
+                        "description": "message: Error en el Token"
                     },
                     "200": {
                         "description": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YjM1ZGE4NS1iMGZmLTQzYmMtOWMxMi00MjA1NzRmZDBkMmIiLCJ1c2VySWQiOiI1ZmZlZThhOTY3ZjA0NWFiZGFkYzhhYmEiLCJub21icmUiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImFwZWxsaWRvUGF0ZXJubyI6Imdyb3VwYnljYXFAZ21haWwuY29tIiwiZmVjaGFfbmFjaW1pZW50byI6Inh4eHgiLCJmZWNoYU5hY2ltaWVudG8iOiJ4eHh4eCIsImdlbmVybyI6Inh4eHh4IiwiZW1haWwiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImNvZGUiOiJncm91cGJ5Y2FxQGdtYWlsLmNvbSIsImVzdGFkbyI6ImNvbXBsZXRhZG8iLCJwYXNhcmVsYSI6InBhc2FyZWxhIiwibWF0ZXJpYWwiOiJtYWV0ZXJpYWwiLCJkaXNwb3NpdGl2b3MiOiJkaXNwb3NpdGl2b3MiLCJpc3MiOiJhcGkuY2RmLmNsIiwiYXBwSWQiOiJhcHBJZCIsInJlbWVtYmVyIjp0cnVlLCJpYXQiOjE2MTI4NjYxNDd9.QfSoZgWxamrl5aMISPDzOIbM-9k7ioxnuJDur80jLrqxk3k1JL3ks5ZWqMaIT2w-iR4un3PUGaaJPY4-zAA9-P8P6Ad-9cb_CopmBfzqyrQDHYnIi-3rnYiuytpECGoNqihGwXihAsa0EsrpGH7BPA_xZ9zrSu90ZAY0n_ihZUe0k6kiIHK_B5HeowEbffuLUDj8A0Eeh5iRP5ELl_CNFNQT3tW0-1tL384WZgm4ajMjosWrM_EhaVrwuky4xZ1pOHii7V0dxZzgEbxTTTEexULcXxs48I0NVuDiX9os2NQOvng5XrmcXu23VbXrNYX1Dv8lPwpc-0_1TDlJlmth4Q"
@@ -77,7 +77,7 @@
                        "bearerAuth": []
                     }],
                     "tags": [
-                        "Data ALTA"
+                        "Data UP"
                     ],
                 "consumes": [
                     "application/json"
@@ -115,7 +115,7 @@
                        "bearerAuth": []
                     }],
                     "tags": [
-                        "Data ALTA"
+                        "Data UP"
                     ],
                 "consumes": [
                     "application/json"
@@ -145,7 +145,7 @@
                        "bearerAuth": []
                     }],
                     "tags": [
-                        "Data BAJA"
+                        "Data DOWN"
                     ],
                 "consumes": [
                     "application/json"
@@ -183,7 +183,7 @@
                        "bearerAuth": []
                     }],
                     "tags": [
-                        "Data BAJA"
+                        "Data DOWN"
                     ],
                 "consumes": [
                     "application/json"
@@ -877,7 +877,7 @@
                     "type": "string"
                 },
                 "estadoToken": {
-                    "type": "boolean"
+                    "type": "string"
                 },
                 "material": {
                     "type": "string"
@@ -900,7 +900,7 @@
                     "type": "string"
                 },
                 "estadoToken": {
-                    "type": "boolean"
+                    "type": "string"
                 },
                 "material": {
                     "type": "string"
@@ -937,14 +937,12 @@
                 "tipo": {
                     "type": "string"
                 },
-                "estado": {
-                    "type": "boolean"
-                },
+           
                 "pasarela": {
-                    "type": "boolean"
+                    "type": "string"
                 },
                 "estadoToken": {
-                    "type": "boolean"
+                    "type": "string"
                 },
                 "material": {
                     "type": "string"
